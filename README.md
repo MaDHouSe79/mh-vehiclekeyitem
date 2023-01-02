@@ -1,0 +1,92 @@
+# MH-Vehicle Key Item
+- The best Vehicle Key Item for QB-Core Framework
+- The vehicle key will act as an item
+- 
+- All the keys that were not created by a owner will be deleted.
+- You can buy more keys if you own this vehicle, incase you lost the a key.
+- Look on the map for the Keymaker and get your new vehicle key.
+
+
+# NOTE, DO NOT DO THIS
+- do not leave your keys in your vehicle, if you do this, you can't enter the vehicle,
+- and you can buy a new key by the keymaker.
+
+# My keys does not work
+- you have to use the key next to the vehicle.
+- open your inventory, dubble click or drag the key item to use.
+- you get a message that you can use the key on that vehicle,
+- if you to far away from a vehicle, you also get a message.
+
+
+# Dependencies:
+- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
+- [qb-target](https://github.com/BerkieBb/qb-target) (Required)
+- [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
+
+
+
+# Install:
+- 1. Place `mh-vehiclekeyitem` in to [mh] folder
+- 2. Add ensure [mh] to your server.cfg
+- 3. Add all everyting below in the scripts.
+- 4. after you add all the code, you can restart the server and enjoy this script ;)
+
+
+
+# To add in `resources/[qb]/qb-inventory/html/js/app.js` around line 420
+- no weight
+```lua
+}else if (itemData.name == "vehiclekey") {
+    $(".item-info-title").html('<p>' + itemData.info.model + '</p>');
+    $(".item-info-description").html('<p>Owner : ' + itemData.info.owner + '</p><p>Plate: ' + itemData.info.plate + '</p>');
+```
+- with weight
+```lua
+} else if (itemData.name == "vehiclekey") {
+    $(".item-info-title").html('<p>' + itemData.info.model + '</p>');
+    $(".item-info-description").html('<p>Eigenaar: ' + itemData.info.owner + '</p><p>Kenteken: ' + itemData.info.plate + '</p>');
+    $(".item-info-stats").html('<p>Gewicht: ' + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + ' | Amount: ' + itemData.amount)
+```
+
+
+# To add in `resources/[qb]/qb-core/shared/items.lua`: (and don't forget to add the image `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/`) folder
+![vehiclekey](https://i.imgur.com/JmRS6v9.png)
+
+- Shared Item (EN) 
+```lua
+['vehiclekey'] = {['name'] = 'vehiclekey', ['label'] = 'Vehicle Key', ['weight'] = 0, ['type'] = 'item', ['image'] = 'vehiclekey.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'This is a car key, take good care of it, if you lose it you probably won\'t be able to use your car' },
+```
+
+- Shared Item (NL)
+```lua
+['vehiclekey'] = {['name'] = 'vehiclekey', ['label'] = 'Autosleutel', ['weight'] = 0, ['type'] = 'item', ['image'] = 'vehiclekey.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Dit is een autosleutel, zorg er goed voor, als u hem verliest, kunt u uw auto waarschijnlijk niet meer gebruiken' },
+```
+
+# To add keys client side
+```lua
+- to create temp keys
+- the player must sit inside the vehivle on the driver or codrivers seat.
+exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
+exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
+TriggerServerEvent('mh-vehiclekeyitem:server:DeleteKey', QBCore.Functions.GetPlate(vehicle))
+
+- To create owner keys 
+- The new owner must sit inside the vehicle on the driver or codriver seat
+TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)            -- (Client side)
+TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -- (Server side)
+```
+
+# To add keys server side
+```lua
+TriggerEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate)       -- (Client side)
+TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
+```
+
+# Hoe to use example
+```lua
+if IsPedInAnyVehicle(PlayerPedId(), false) then
+    if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId()), -1) == PlayerPedId() then 
+        DoIHaveTheVehicleKeyItem(GetVehiclePedIsIn(PlayerPedId()))
+    end
+end
+```
