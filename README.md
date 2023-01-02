@@ -126,7 +126,8 @@ else
     QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
 end
 ```
-- or
+
+# or
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', function(result)
