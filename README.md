@@ -44,7 +44,7 @@
 - you get a message that you can use the key on that vehicle,
 - if you to far away from a vehicle, you also get a message.
 
-# F1 Menu
+# F1 Menu (qb-radialmenu)
 - There is a sell menu to sell your vehiclekey to a other player.
 - youn eed to add the job like cardealer (for a real player)
 - and add this in to `Config.IgnoreForKeyItem`
