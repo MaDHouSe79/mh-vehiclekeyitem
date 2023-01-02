@@ -47,7 +47,6 @@
 
 # Dependencies:
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
-- [qb-target](https://github.com/BerkieBb/qb-target) (Required)
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
 
