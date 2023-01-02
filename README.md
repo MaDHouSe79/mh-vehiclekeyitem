@@ -80,7 +80,8 @@ if you dont do this you can't drive this vehicle, the lockpick works also the sa
 add the same exports when you get the keys.
 
 
-# To add in `resources/[qb]/qb-inventory/html/js/app.js` around line 420
+# To add in 
+- `resources/[qb]/qb-inventory/html/js/app.js` around line 420
 - no weight
 ```lua
 }else if (itemData.name == "vehiclekey") {
@@ -96,7 +97,9 @@ add the same exports when you get the keys.
 ```
 
 
-# To add in `resources/[qb]/qb-core/shared/items.lua`: (and don't forget to add the image `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/`) folder
+# To 
+- add in `resources/[qb]/qb-core/shared/items.lua`: 
+- and don't forget to add the image `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/` folder
 ![vehiclekey](https://i.imgur.com/JmRS6v9.png)
 
 - Shared Item (EN) 
