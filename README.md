@@ -115,7 +115,7 @@ TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -
 
 # To add keys server side
 ```lua
-TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Client side)
+TriggerEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Client side)
 TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
 ```
 
