@@ -34,7 +34,8 @@
 
 # NOTE, DO NOT DO THIS
 - do not leave your keys in your vehicle, if you do this, you can't enter the vehicle,
-- and you can get a new key, if your vehicle is in impound, (don't for get to add the `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`)
+- and you can get a new key, if your vehicle is in impound, 
+- (don't for get to add the `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`)
 
 
 # My keys does not work
