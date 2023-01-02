@@ -10,18 +10,19 @@ version '1.0'
 description 'MH Vehicle Key Item - The best vehicle key item for QBCore Framework'
 
 shared_scripts {
-	'@qb-core/shared/locale.lua',
+    '@qb-core/shared/locale.lua',
     'locales/nl.lua', -- Change this to your preferred language
-	'config.lua',
+    'config.lua',
 }
 
 client_scripts {
-	'client/main.lua',
+    'client/main.lua',
 }
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'server/main.lua',
+    'server/update.lua',
 }
 
 lua54 'yes'
