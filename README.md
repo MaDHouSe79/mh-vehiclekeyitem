@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/github/stars/MaDHouSe79/mh-vehiclekeyitem?color=white"/> 
   </a>
   <a href="https://github.com/MaDHouSe79/mh-vehiclekeyitem/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/MaDHouSe79/mh-vehiclekeys?color=black"/> 
+    <img src="https://img.shields.io/github/license/MaDHouSe79/mh-vehiclekeyitem?color=black"/> 
   </a>      
 </p>
 
