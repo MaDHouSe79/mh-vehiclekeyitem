@@ -42,6 +42,17 @@ local function DeleteKey(plate)
 end
 exports('DeleteKey', DeleteKey)
 
+local function HasKey(plate)
+    QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', function(result)
+        if result then
+            return true
+        else
+            QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
+            return false
+        end
+    end, plate)
+end
+exports('HasKey', HasKey)
 
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	PlayerData = QBCore.Functions.GetPlayerData()
