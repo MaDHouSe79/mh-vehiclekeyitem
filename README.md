@@ -120,12 +120,6 @@ TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)         
 TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)      -- (Server side)
 ```
 
-# To add keys server side
-```lua
-TriggerEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate)       -- (Client side)
-TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
-```
-
 # How to check if you have the key item, you can use this in your own vehicle key script.
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
