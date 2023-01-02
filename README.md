@@ -1,15 +1,12 @@
 # MH-Vehicle Key Item
 - The best Vehicle Key Item for QB-Core Framework
-- The vehicle key will act as an item
-- 
-- All the keys that were not created by a owner will be deleted.
-- You can buy more keys if you own this vehicle, incase you lost the a key.
-- Look on the map for the Keymaker and get your new vehicle key.
-
+- The vehicle key will act as an item.
+- the keys wil be deleted when you take or park you vehicle in to the garage.
 
 # NOTE, DO NOT DO THIS
 - do not leave your keys in your vehicle, if you do this, you can't enter the vehicle,
-- and you can buy a new key by the keymaker.
+- and you can get a new key, if your vehicle is in impound, (don't for get to add the `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`)
+
 
 # My keys does not work
 - you have to use the key next to the vehicle.
@@ -24,13 +21,21 @@
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
 
-
 # Install:
 - 1. Place `mh-vehiclekeyitem` in to [mh] folder
 - 2. Add ensure [mh] to your server.cfg
 - 3. Add all everyting below in the scripts.
 - 4. after you add all the code, you can restart the server and enjoy this script ;)
 
+
+# To Add in `qb-garages`:
+- 1. Add in to qb-garages client.lua, when you take a vehicle: `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`
+- 2. Add in to qb-garages client.lua, when you park a vehicle `exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))`
+
+# Add and removeing keys
+You need to add this above in all your script that uses keys or spawn vehicles that you need to use, 
+if you dont do this you can't drive this vehicle, the lockpick works also the same.
+add the same exports when you get the keys.
 
 
 # To add in `resources/[qb]/qb-inventory/html/js/app.js` around line 420
@@ -65,7 +70,6 @@
 # To add keys client side
 ```lua
 - to create temp keys
-- the player must sit inside the vehivle on the driver or codrivers seat.
 exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
 TriggerServerEvent('mh-vehiclekeyitem:server:DeleteKey', QBCore.Functions.GetPlate(vehicle))
@@ -78,15 +82,6 @@ TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -
 
 # To add keys server side
 ```lua
-TriggerEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate)       -- (Client side)
+TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Client side)
 TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
-```
-
-# Hoe to use example
-```lua
-if IsPedInAnyVehicle(PlayerPedId(), false) then
-    if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId()), -1) == PlayerPedId() then 
-        DoIHaveTheVehicleKeyItem(GetVehiclePedIsIn(PlayerPedId()))
-    end
-end
 ```
