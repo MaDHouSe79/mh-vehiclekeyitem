@@ -104,7 +104,6 @@ exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
 
 - To create owner keys 
-- The new owner must sit inside the vehicle on the driver or codriver seat
 TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)            -- (Client side)
 TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -- (Server side)
 ```
