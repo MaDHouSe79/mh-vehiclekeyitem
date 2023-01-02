@@ -115,12 +115,8 @@ add the same exports when you get the keys.
 exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
 
-- To create owner keys 
-TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)            -- (Client side)
-TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)      -- (Server side)
-```
 
-# How to check if you have the key item, you can use this in your own vehicle key script.
+# to check if you have the key item, you can use this in your own vehicle key script
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey(QBCore.Functions.GetPlate(vehicle))
@@ -129,6 +125,17 @@ if hasKeyItem then
 else
     QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
 end
+```
+- or
+```lua
+local vehicle = GetVehiclePedIsIn(PlayerPedId())
+QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', function(result)
+    if result then
+        -- your code, you have the key item
+    else
+        QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
+    end
+end, QBCore.Functions.GetPlate(vehicle))
 ```
 
 
