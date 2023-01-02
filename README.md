@@ -98,8 +98,10 @@ add the same exports when you get the keys.
 
 
 # To 
-- add in `resources/[qb]/qb-core/shared/items.lua`: 
-- and don't forget to add the image `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/` folder
+- add in `resources/[qb]/qb-core/shared/items.lua`
+- add `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/` folder:
+
+
 ![vehiclekey](https://i.imgur.com/JmRS6v9.png)
 
 - Shared Item (EN) 
