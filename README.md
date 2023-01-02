@@ -114,3 +114,11 @@ TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -
 TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Client side)
 TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
 ```
+
+## 🙈 Youtube & Discord
+- [Youtube](https://www.youtube.com/@MaDHouSe79) for videos
+- [Discord](https://discord.gg/cEMSeE9dgS)
+
+# LICENSE
+[GPL LICENSE](./LICENSE)<br />
+&copy; [MaDHouSe79](https://www.youtube.com/@MaDHouSe79)
