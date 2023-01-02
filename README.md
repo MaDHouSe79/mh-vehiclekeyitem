@@ -63,10 +63,12 @@
 - 4. after you add all the code, you can restart the server and enjoy this script ;)
 
 # server.cfg
+```lua
 ensure qb-core
 ensure mh-vehiclekeyitem
 ensure mh-vehiclekeys
 ensure [qb]
+```
 
 # To Add in `qb-garages`:
 - 1. Add in to qb-garages client.lua, when you take a vehicle: `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`
