@@ -102,7 +102,6 @@ add the same exports when you get the keys.
 - to create temp keys
 exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
-TriggerServerEvent('mh-vehiclekeyitem:server:DeleteKey', QBCore.Functions.GetPlate(vehicle))
 
 - To create owner keys 
 - The new owner must sit inside the vehicle on the driver or codriver seat
