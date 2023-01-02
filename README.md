@@ -114,7 +114,7 @@ add the same exports when you get the keys.
 - to create temp keys
 exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
-
+```
 
 # to check if you have the key item, you can use this in your own vehicle key script
 ```lua
@@ -126,8 +126,7 @@ else
     QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
 end
 ```
-
-# or
+- or
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', function(result)
