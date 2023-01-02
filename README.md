@@ -126,6 +126,17 @@ TriggerEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate)       -
 TriggerClientEvent('mh-vehiclekeyitem:client:givekey', buyerId, vehice, plate) -- (Server side)
 ```
 
+# How to check if you have the key item, you can use this in your own vehicle key script.
+```lua
+local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey(QBCore.Functions.GetPlate(vehicle))
+if hasKeyItem then
+    -- your code, you have the key item
+else
+    QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
+end
+```
+
+
 ## 🙈 Youtube & Discord
 - [Youtube](https://www.youtube.com/@MaDHouSe79) for videos
 - [Discord](https://discord.gg/cEMSeE9dgS)
