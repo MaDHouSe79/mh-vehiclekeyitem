@@ -116,8 +116,8 @@ exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))
 
 - To create owner keys 
-TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)            -- (Client side)
-TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)      -- (Server side)
+TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)            -- (Client side)
+TriggerClientEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)      -- (Server side)
 ```
 
 # To add keys server side
