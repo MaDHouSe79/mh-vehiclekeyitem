@@ -200,8 +200,7 @@ local plate = QBCore.Functions.GetPlate(vehicle)
 TriggerEvent('mh-vehiclekeyitem:client:DeleteKey', plate)
 ```
 
-
-# to check if you have the key item, you can use this in your own vehicle key script
+# To check if you have the key item, you can use this in your own vehicle key script
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', function(result)
@@ -211,18 +210,6 @@ QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', fun
         QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
     end
 end, QBCore.Functions.GetPlate(vehicle))
-```
-- or
-```lua
-local vehicle = GetVehiclePedIsIn(PlayerPedId())
-local plate = QBCore.Functions.GetPlate(vehicle)
-local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey(plate)
-if hasKeyItem then
-    -- your code
-else
-    QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
-end
-
 ```
 
 
