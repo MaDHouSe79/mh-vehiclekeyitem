@@ -56,12 +56,6 @@
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
 
-# Install:
-- 1. Place `mh-vehiclekeyitem` in to [mh] folder
-- 2. Add ensure [mh] to your server.cfg
-- 3. Add all everyting below in the scripts.
-- 4. after you add all the code, you can restart the server and enjoy this script ;)
-
 # server.cfg
 ```lua
 ensure qb-core
