@@ -164,7 +164,7 @@ end
 exports("GetItemByName", GetItemByName) -- <--- TO ADD
 ```
 
-# To 
+# To Add
 - add in `resources/[qb]/qb-core/shared/items.lua`
 - add `vehiclekey.png` in `resources/[qb]/qb-inventory/html/images/` folder:
 
