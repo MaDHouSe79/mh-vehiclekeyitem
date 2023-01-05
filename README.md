@@ -90,6 +90,17 @@ add the same exports when you get the keys.
     $(".item-info-stats").html('<p>Gewicht: ' + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + ' | Amount: ' + itemData.amount)
 ```
 
+# To Add or Edit in qb-inventory/server/main.lua
+- in case you don;t have it
+```lua
+local function GetItemByName(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    item = tostring(item):lower()
+    local slot = GetFirstSlotByItem(Player.PlayerData.items, item)
+    return Player.PlayerData.items[slot]
+end
+exports("GetItemByName", GetItemByName)
+```
 
 # To 
 - add in `resources/[qb]/qb-core/shared/items.lua`
