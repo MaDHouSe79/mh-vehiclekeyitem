@@ -135,8 +135,9 @@ QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', fun
         QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
     end
 end, QBCore.Functions.GetPlate(vehicle))
-
+```
 - or
+```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 local plate = QBCore.Functions.GetPlate(vehicle)
 local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey()
