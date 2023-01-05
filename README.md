@@ -140,7 +140,7 @@ end, QBCore.Functions.GetPlate(vehicle))
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
 local plate = QBCore.Functions.GetPlate(vehicle)
-local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey()
+local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey(plate)
 if hasKeyItem then
     -- your code
 else
