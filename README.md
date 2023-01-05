@@ -56,8 +56,8 @@
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
 # Install
-- 1: create a folder in resources names [mh] and put mh-vehiclekeyitem in it.
-- 2: add in your server.cfg below ensure [qb] add ensure [mh] below it.
+- 1: create a folder in resources names `[mh]` and put `mh-vehiclekeyitem` in it.
+- 2: add in your `server.cfg` below `ensure [qb]` add `ensure [mh]` below it.
 - Add the code to your scripts that needs keys,
 - restart the server
 
