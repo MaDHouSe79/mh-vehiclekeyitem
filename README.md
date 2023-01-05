@@ -72,6 +72,65 @@ ensure [mh]
 - 1. Add in to qb-garages client.lua, when you take a vehicle: `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`
 - 2. Add in to qb-garages client.lua, when you park a vehicle `exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))`
 
+#garage example
+- park vehicle
+```lua
+local function CheckPlayers(vehicle, garage)
+    for i = -1, 5, 1 do
+        local seat = GetPedInVehicleSeat(vehicle, i)
+        if seat then
+            TaskLeaveVehicle(seat, vehicle, 0)
+            if garage then
+                SetEntityCoords(seat, garage.takeVehicle.x, garage.takeVehicle.y, garage.takeVehicle.z)
+            end
+        end
+    end
+    SetVehicleDoorsLocked(vehicle)
+    exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))    -- <---- HERE TO ADD
+    Wait(1500)
+    QBCore.Functions.DeleteVehicle(vehicle)
+end
+```
+- get vehicle
+```lua
+RegisterNetEvent('qb-garages:client:takeOutGarage', function(data)
+    local type = data.type
+    local vehicle = data.vehicle
+    local garage = data.garage
+    local index = data.index
+    QBCore.Functions.TriggerCallback('qb-garage:server:IsSpawnOk', function(spawn)
+        if spawn then
+            local location
+            if type == "house" then
+                if garage.takeVehicle.h then garage.takeVehicle.w = garage.takeVehicle.h end -- backward compatibility
+                location = garage.takeVehicle
+            else
+                location = garage.spawnPoint
+            end
+            QBCore.Functions.TriggerCallback('qb-garage:server:spawnvehicle', function(netId, properties)
+                local veh = NetToVeh(netId)
+                QBCore.Functions.SetVehicleProperties(veh, properties)
+                exports['LegacyFuel']:SetFuel(veh, vehicle.fuel)
+                doCarDamage(veh, vehicle)
+                TriggerServerEvent('qb-garage:server:updateVehicleState', 0, vehicle.plate, index)
+                closeMenuFull()
+                TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh) -- <---- HERE TO ADD
+                TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                SetVehicleEngineOn(veh, true, true)
+                if type == "house" then
+                    exports['qb-core']:DrawText(Lang:t("info.park_e"), 'left')
+                    InputOut = false
+                    InputIn = true
+                end
+            end, vehicle, location, true)
+        else
+            QBCore.Functions.Notify(Lang:t("error.not_impound"), "error", 5000)
+        end
+    end, vehicle.plate, type)
+end)
+```
+
+
 # Add and removeing keys
 You need to add this above in all your script that uses keys or spawn vehicles that you need to use, 
 if you dont do this you can't drive this vehicle, the lockpick works also the same.
