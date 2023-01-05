@@ -55,13 +55,17 @@
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
+# Install
+- 1: rename mh-vehiclekeys = qb-vehiclekeys and put this folder in [qb]
+- 2: create a folder [mh] and put mh-vehiclekeyitem in it.
+- Add the code to your scripts that needs keys,
+- restart the server
 
 # server.cfg
 ```lua
 ensure qb-core
-ensure mh-vehiclekeyitem
-ensure mh-vehiclekeys
 ensure [qb]
+ensure [mh]
 ```
 
 # To Add in `qb-garages`:
