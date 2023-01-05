@@ -91,7 +91,7 @@ add the same exports when you get the keys.
 ```
 
 # To Add or Edit in qb-inventory/server/main.lua
-- in case you don;t have it
+- in case you don't have it
 ```lua
 local function GetItemByName(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
