@@ -175,6 +175,15 @@ RegisterNetEvent('mh-vehiclekeyitem:client:DeleteKey', function(plate)
 	TriggerServerEvent('mh-vehiclekeyitem:server:DeleteKey', plate)
 end)
 
+RegisterNetEvent('mh-vehiclekeyitem:client:CreateTempKey', function(vehicle)
+    if vehicle then
+        local model, plate = GetVehicleData(vehicle)
+        TriggerServerEvent('mh-vehiclekeyitem:server:CreateTempVehiclekey', {model = model, plate = plate})
+    else
+        QBCore.Functions.Notify("Geen voertuig gevonden!", 'error')
+    end
+end)
+
 RegisterNetEvent('mh-vehiclekeyitem:client:givekey', function(vehicle, plate)
 	local ped = PlayerPedId()
 	if IsPedInAnyVehicle(ped, false) then
