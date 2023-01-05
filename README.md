@@ -181,22 +181,25 @@ exports("GetItemByName", GetItemByName) -- <--- TO ADD
 ['vehiclekey'] = {['name'] = 'vehiclekey', ['label'] = 'Autosleutel', ['weight'] = 0, ['type'] = 'item', ['image'] = 'vehiclekey.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Dit is een autosleutel, zorg er goed voor, als u hem verliest, kunt u uw auto waarschijnlijk niet meer gebruiken' },
 ```
 
-# To add keys client side
+# Client side to give owner key (only for vehicle owners)
 ```lua
-- To create keys
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
-exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)
-
-- Delete key
-local vehicle = GetVehiclePedIsIn(PlayerPedId())
-local plate = QBCore.Functions.GetPlate(vehicle)
-exports['mh-vehiclekeyitem']:DeleteKey(plate)
-```
-
-# Client side to give owner keys
-```lua
 TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)
 ```
+
+# Client side to give temp key (not a vehicle owner)
+```lua
+local vehicle = GetVehiclePedIsIn(PlayerPedId())
+TriggerEvent('mh-vehiclekeyitem:client:CreateTempKey', vehicle)
+```
+
+# Client side to delete key
+```lua
+local vehicle = GetVehiclePedIsIn(PlayerPedId())
+local plate = QBCore.Functions.GetPlate(vehicle)
+TriggerEvent('mh-vehiclekeyitem:client:DeleteKey', plate)
+```
+
 
 # to check if you have the key item, you can use this in your own vehicle key script
 ```lua
