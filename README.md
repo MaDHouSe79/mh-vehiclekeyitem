@@ -93,13 +93,16 @@ add the same exports when you get the keys.
 # To Add or Edit in qb-inventory/server/main.lua
 - in case you don't have it
 ```lua
+-- check if you have this in your inventory
 local function GetItemByName(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     item = tostring(item):lower()
     local slot = GetFirstSlotByItem(Player.PlayerData.items, item)
     return Player.PlayerData.items[slot]
 end
-exports("GetItemByName", GetItemByName)
+
+-- add this is you dont have it
+exports("GetItemByName", GetItemByName) -- <--- TO ADD
 ```
 
 # To 
