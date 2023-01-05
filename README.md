@@ -144,7 +144,7 @@ local hasKeyItem = exports['mh-vehiclekeyitem']:HasKey(plate)
 if hasKeyItem then
     -- your code
 else
-    -- notify you dont have the keys
+    QBCore.Functions.Notify("You have no keys to this vehicle.", 'error')
 end
 
 ```
