@@ -68,11 +68,7 @@ ensure [qb]
 ensure [mh]
 ```
 
-# To Add in `qb-garages`:
-- 1. Add in to qb-garages client.lua, when you take a vehicle: `TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', veh)`
-- 2. Add in to qb-garages client.lua, when you park a vehicle `exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))`
-
-# qb-garage example (client side)
+# To edit in qb-garage example (client side)
 - park vehicle
 ```lua
 local function CheckPlayers(vehicle, garage)
