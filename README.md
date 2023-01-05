@@ -126,6 +126,13 @@ local plate = QBCore.Functions.GetPlate(vehicle)
 exports['mh-vehiclekeyitem']:DeleteKey(plate)
 ```
 
+# or use this Client side to give owner keys
+```lua
+TriggerEvent('mh-vehiclekeyitem:client:CreateVehicleOwnerKey', vehicle)
+or
+TriggerEvent('mh-vehiclekeyitem:client:givenewkey')
+```
+
 # to check if you have the key item, you can use this in your own vehicle key script
 ```lua
 local vehicle = GetVehiclePedIsIn(PlayerPedId())
