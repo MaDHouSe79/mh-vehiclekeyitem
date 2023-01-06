@@ -212,6 +212,9 @@ QBCore.Functions.TriggerCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', fun
 end, QBCore.Functions.GetPlate(vehicle))
 ```
 
+# NOTE To gets keys
+- you need to add the triggers above in every script that uses vehicles that you use and drive.
+- if you dont do this your job veicles or others vehicles will not drive
 
 ## 🙈 Youtube & Discord
 - [Youtube](https://www.youtube.com/@MaDHouSe79) for videos
