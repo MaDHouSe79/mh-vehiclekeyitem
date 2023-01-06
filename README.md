@@ -32,11 +32,20 @@
 - The vehicle key will act as an item.
 - the keys wil be deleted when you take or park you vehicle in to the garage.
 
+# Dependencies:
+- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
+- [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
+
+# Install
+- 1: create a folder in resources names `[mh]` and put `mh-vehiclekeyitem` in it.
+- 2: add in your `server.cfg` below `ensure [qb]` add `ensure [mh]` below it.
+- Add the code to your scripts that needs keys,
+- restart the server
+
 # NOTE, DO NOT DO THIS
 - do not leave your keys in your vehicle, if you do this, you can't enter the vehicle,
 - and you can get a new key, if your vehicle is in impound, 
 - (don't for get to add the `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`)
-
 
 # My keys does not work
 - you have to use the key next to the vehicle.
@@ -49,17 +58,6 @@
 - you need to add the job like cardealer (for a real player)
 - and add this in to `Config.IgnoreForKeyItem`
 - with this, the player get a Key Icone in there F1 menu to sell the vehicle with key. 
-
-
-# Dependencies:
-- [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
-- [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
-
-# Install
-- 1: create a folder in resources names `[mh]` and put `mh-vehiclekeyitem` in it.
-- 2: add in your `server.cfg` below `ensure [qb]` add `ensure [mh]` below it.
-- Add the code to your scripts that needs keys,
-- restart the server
 
 # server.cfg
 ```lua
