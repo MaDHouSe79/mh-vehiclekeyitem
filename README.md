@@ -43,15 +43,15 @@
 - restart the server
 
 # NOTE, DO NOT DO THIS
-- do not leave your keys in your vehicle, if you do this, you can't enter the vehicle,
-- and you can get a new key, if your vehicle is in impound, 
-- (don't for get to add the `exports['mh-vehiclekeyitem']:CreateTempKey(vehicle)`)
+- do not leave your keys in your vehicle, if you do this, you can't enter the vehicle, and you can get a new key.
+
 
 # My keys does not work
 - you have to use the key next to the vehicle.
 - open your inventory, dubble click or drag the key item to use.
 - you get a message that you can use the key on that vehicle,
 - if you to far away from a vehicle, you also get a message.
+- don't for get to add the triggers in your scripts that needs keys.
 
 # F1 Menu (qb-radialmenu)
 - There is a sell menu to sell your vehiclekey to a other player.
