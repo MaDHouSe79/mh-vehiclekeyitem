@@ -38,7 +38,7 @@
 
 # I need held
 - i don't help you if you did not read this file.
-- you need at least the basics of proramming or i can't help you.
+- you need at least the basics of proramming and how fivem works, or i can't help you.
 
 # Install
 - 1: create a folder in resources names `[mh]` and put `mh-vehiclekeyitem` in it.
