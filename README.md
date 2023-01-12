@@ -36,6 +36,10 @@
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
+# I need held
+- i don't help you if you did not read this file.
+- you need at least the basics of proramming or i can't help you.
+
 # Install
 - 1: create a folder in resources names `[mh]` and put `mh-vehiclekeyitem` in it.
 - 2: add in your `server.cfg` below `ensure [qb]` add `ensure [mh]` below it.
@@ -44,7 +48,6 @@
 
 # NOTE, DO NOT DO THIS
 - do not leave your keys in your vehicle, if you do this, you can't enter the vehicle, and you can get a new key.
-
 
 # My keys does not work
 - you have to use the key next to the vehicle.
