@@ -53,6 +53,12 @@
 - if you to far away from a vehicle, you also get a message.
 - don't for get to add the triggers in your scripts that needs keys.
 
+# When i Buy a car i don't get a key
+- This script is not just a copy and part script.
+- You need to edit your server for this script.
+- you must edit all the scripts that uses vehicles. (you need to use the triggers i gave you in this readme)
+- so jobs/gangs/garages/ and other scripts that needa a key must be edit.
+
 # F1 Menu (qb-radialmenu)
 - There is a sell menu to sell your vehiclekey to a other player.
 - you need to add the job like cardealer (for a real player)
