@@ -137,7 +137,7 @@ end)
 # Add and removeing keys
 You need to add this above in all your script that uses keys or spawn vehicles that you need to use, 
 if you dont do this you can't drive this vehicle, the lockpick works also the same.
-add the same exports when you get the keys.
+add the same triggers when you get the keys.
 
 
 # To add in 
