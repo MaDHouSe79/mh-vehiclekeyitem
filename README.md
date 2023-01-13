@@ -50,17 +50,17 @@
 - do not leave your keys in your vehicle, if you do this, you can't enter the vehicle, and you can get a new key.
 
 # My keys does not work
-- you have to use the key next to the vehicle.
+- you have to use the key next to the vehicle and look at the vehicle.
 - open your inventory, dubble click or drag the key item to use.
 - you get a message that you can use the key on that vehicle,
 - if you to far away from a vehicle, you also get a message.
-- don't for get to add the triggers in your scripts that needs keys.
+- don't for get to add the triggers in your scripts that need keys.
 
 # When i Buy a car i don't get a key
 - This script is not just a copy and part script.
 - You need to edit your server for this script.
 - you must edit all the scripts that uses vehicles. (you need to use the triggers i gave you in this readme)
-- so jobs/gangs/garages/ and other scripts that needa a key must be edit.
+- so jobs/gangs/garages/ and other scripts that need a key must be edit.
 
 # F1 Menu (qb-radialmenu)
 - There is a sell menu to sell your vehiclekey to a other player.
