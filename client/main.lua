@@ -236,13 +236,17 @@ end)
 
 RegisterKeyMapping('+engine', 'Toggle Engine', 'keyboard', 'G')
 RegisterCommand('+engine', function()
-    if currenVehicle == nil or GetPedInVehicleSeat(currenVehicle, -1) ~= PlayerPedId() then return end
-	if GetIsVehicleEngineRunning(currenVehicle) then
-		SetVehicleEngineOn(currenVehicle, false, false, true)
-		QBCore.Functions.Notify(Lang:t("info.engine_off"))
-	else
-		SetVehicleEngineOn(currenVehicle, true, false, true)
-		QBCore.Functions.Notify(Lang:t("info.engine_on"))
+	local ped = PlayerPedId()
+	local vehicle = GetVehiclePedIsIn(ped, false)
+	local engineStatus = GetIsVehicleEngineRunning(vehicle)
+	if vehicle ~= 0 then
+		if not engineStatus then
+			SetVehicleEngineOn(vehicle, true, false, true)
+			QBCore.Functions.Notify(Lang:t("info.engine_on"))
+		else 
+			SetVehicleEngineOn(vehicle, false, false, true)
+			QBCore.Functions.Notify(Lang:t("info.engine_off"))
+		end 
 	end
 end)
 
