@@ -36,7 +36,7 @@
 - [qb-core](https://github.com/qbcore-framework/qb-core) (Required)
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
-# I need held
+# I need help
 - i don't help you if you did not read this file.
 - you need at least the basics of proramming and how fivem works, or i can't help you.
 
