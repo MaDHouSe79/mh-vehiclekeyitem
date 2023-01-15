@@ -167,7 +167,7 @@ local function GetItemByName(source, item)
     return Player.PlayerData.items[slot]
 end
 
--- add this is you dont have it
+-- add this if you dont have it
 exports("GetItemByName", GetItemByName) -- <--- TO ADD
 ```
 
