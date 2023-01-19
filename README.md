@@ -89,7 +89,7 @@ local function CheckPlayers(vehicle, garage)
         end
     end
     SetVehicleDoorsLocked(vehicle)
-    exports['mh-vehiclekeyitem']:DeleteKey(QBCore.Functions.GetPlate(vehicle))    -- <---- HERE TO ADD
+    TriggerEvent('mh-vehiclekeyitem:client:DeleteKey', QBCore.Functions.GetPlate(vehicle))  -- <---- HERE TO ADD
     Wait(1500)
     QBCore.Functions.DeleteVehicle(vehicle)
 end
