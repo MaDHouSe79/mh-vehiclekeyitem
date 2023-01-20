@@ -223,9 +223,11 @@ QBCore.Functions.CreateCallback('mh-vehiclekeyitem:server:IHaveTheKeyItem', func
 		if not disable[src] then -- must be false at start
 			local hasKey = HaveKeyItem(src, plate)
 			if hasKey ~= nil then output = hasKey end
+			if IsAdmin(id) then output = true end
 		else
 			output = true
 		end
+		
 	end
 	cb(output)
 end)
