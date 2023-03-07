@@ -57,7 +57,7 @@
 - don't for get to add the triggers in your scripts that need keys.
 
 # When i Buy a car i don't get a key
-- This script is not just a copy and part script.
+- This script is not just a copy and past script.
 - You need to edit your server for this script.
 - you must edit all the scripts that uses vehicles. (you need to use the triggers i gave you in this readme)
 - so jobs/gangs/garages/ and other scripts that need a key must be edit.
