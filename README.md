@@ -37,10 +37,10 @@
 - [mh-vehiclekeys](https://github.com/MaDHouSe79/mh-vehiclekeys) (Required)
 
 # Optional
-- [zerio-scripts](https://store.zerio-scripts.com/) 
+- [Zerio Cardealer](https://store.zerio-scripts.com/package/5041342)
 - The zerio-cardealer can be used and can work with mh-vehiclekeyitem.
-- make a requat to the owner and ask him to implement the triggers 
-- that you need to get and remove keys.
+- make a requat to the owners discord and ask him to implement the triggers 
+- that you need to give and remove keys.
 
 # I need help
 - i don't help you if you did not read this file.
