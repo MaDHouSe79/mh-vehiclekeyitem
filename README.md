@@ -229,9 +229,8 @@ end, QBCore.Functions.GetPlate(vehicle))
 - you need to add the triggers above in every script that uses vehicles that you use and drive.
 - if you don't do this your job vehicles or others vehicles will not drive.
 
-## 🙈 Youtube & Discord
-- [Youtube](https://www.youtube.com/@MaDHouSe79) for videos
-- [Discord](https://discord.gg/cEMSeE9dgS)
+# 🙈 Youtube
+- [Youtube](https://www.youtube.com/c/MaDHouSe79)
 
 # LICENSE
 [GPL LICENSE](./LICENSE)<br />
