@@ -139,6 +139,52 @@ RegisterNetEvent('qb-garages:client:takeOutGarage', function(data)
 end)
 ```
 
+# Replace in qb-core/client/events.lua around line 121
+```lua
+RegisterNetEvent('QBCore:Command:SpawnVehicle', function(vehName)
+    local ped = PlayerPedId()
+    local hash = GetHashKey(vehName)
+    local veh = GetVehiclePedIsUsing(ped)
+    if not IsModelInCdimage(hash) then return end
+    RequestModel(hash)
+    while not HasModelLoaded(hash) do
+        Wait(0)
+    end
+
+    if IsPedInAnyVehicle(ped) then
+        SetEntityAsMissionEntity(veh, true, true)
+        DeleteVehicle(veh)
+    end
+
+    local vehicle = CreateVehicle(hash, GetEntityCoords(ped), GetEntityHeading(ped), true, false)
+    TaskWarpPedIntoVehicle(ped, vehicle, -1)
+    SetVehicleFuelLevel(vehicle, 100.0)
+    SetVehicleDirtLevel(vehicle, 0.0)
+    SetModelAsNoLongerNeeded(hash)
+    TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(vehicle))
+    TriggerEvent('mh-vehiclekeyitem:client:CreateTempKey', vehicle) -- ADD HERE
+end)
+
+RegisterNetEvent('QBCore:Command:DeleteVehicle', function()
+    local ped = PlayerPedId()
+    local veh = GetVehiclePedIsUsing(ped)
+    if veh ~= 0 then
+        SetEntityAsMissionEntity(veh, true, true)
+        TriggerEvent('mh-vehiclekeyitem:client:DeleteKey', GetVehicleNumberPlateText(veh)) -- ADD HERE
+        DeleteVehicle(veh)
+    else
+        local pcoords = GetEntityCoords(ped)
+        local vehicles = GetGamePool('CVehicle')
+        for _, v in pairs(vehicles) do
+            if #(pcoords - GetEntityCoords(v)) <= 5.0 then
+                SetEntityAsMissionEntity(v, true, true)
+                TriggerEvent('mh-vehiclekeyitem:client:DeleteKey', GetVehicleNumberPlateText(v)) -- ADD HERE
+                DeleteVehicle(v)
+            end
+        end
+    end
+end)
+```
 
 # Add and removeing keys
 You need to add this above in all your script that uses keys or spawn vehicles that you need to use, 
