@@ -147,6 +147,7 @@ add the same triggers when you get the keys.
 
 
 # To add in 
+- for the old qb-inventory 
 - `resources/[qb]/qb-inventory/html/js/app.js` around line 420
 - no weight
 ```lua
@@ -161,6 +162,16 @@ add the same triggers when you get the keys.
     $(".item-info-description").html('<p>Eigenaar: ' + itemData.info.owner + '</p><p>Kenteken: ' + itemData.info.plate + '</p>');
     $(".item-info-stats").html('<p>Gewicht: ' + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + ' | Amount: ' + itemData.amount)
 ```
+
+---------------------
+- for the new qb-inventory around line 399
+```js
+case "vehiclekey":
+    return `<p><strong>Model: </strong><span>${itemData.info.model}</span></p>
+    <p><strong>Owner: </strong><span>${itemData.info.owner}</span></p>
+    <p><strong>Plate: </strong><span>${itemData.info.plate}</span></p>`;
+```
+
 
 # To Add or Edit in qb-inventory/server/main.lua
 - in case you don't have it
