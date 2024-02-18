@@ -167,8 +167,8 @@ add the same triggers when you get the keys.
 - for the new qb-inventory around line 399
 ```js
 case "vehiclekey":
-    return `<p><strong>Model: </strong><span>${itemData.info.model}</span></p>
-    <p><strong>Owner: </strong><span>${itemData.info.owner}</span></p>
+    return `<p><strong>Owner: </strong><span>${itemData.info.owner}</span></p>
+    <p><strong>Model: </strong><span>${itemData.info.model}</span></p>
     <p><strong>Plate: </strong><span>${itemData.info.plate}</span></p>`;
 ```
 
