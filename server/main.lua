@@ -114,7 +114,7 @@ local function DeleteKey(id, plate)
                 if item.info.plate ~= nil then
                     if item.info.plate == plate then
                         Player.Functions.RemoveItem(Config.KeyItem, 1, item.slot)
-                        TriggerClientEvent('inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem],
+                        TriggerClientEvent('qb-inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem],
                             'remove', 1)
                     end
                 end
@@ -142,7 +142,7 @@ local function AddTempVehicleKey(id, plate, model)
                 info.model = QBCore.Shared.Vehicles[model].name
             end
             Player.Functions.AddItem(Config.KeyItem, 1, nil, info)
-            TriggerClientEvent('inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem], 'add', 1)
+            TriggerClientEvent('qb-inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem], 'add', 1)
             TriggerClientEvent('mh-vehiclekeyitem:client:DeleteVehicleKey', -1) -- Delete unauthorized vehicle keys
         end
     end
@@ -162,7 +162,7 @@ local function AddVehicleKey(id, plate)
                 info.model = QBCore.Shared.Vehicles[model].name
             end
             Player.Functions.AddItem(Config.KeyItem, 1, nil, info)
-            TriggerClientEvent('inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem], 'add', 1)
+            TriggerClientEvent('qb-inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem], 'add', 1)
             TriggerClientEvent('mh-vehiclekeyitem:client:DeleteVehicleKey', -1) -- Delete unauthorized vehicle keys
         end
     end
@@ -185,7 +185,7 @@ local function RegisterVehicleKeys(id)
                                         else
                                             QBCore.Functions.GetPlayer(id).Functions
                                                 .RemoveItem(Config.KeyItem, 1, item.slot)
-                                            TriggerClientEvent('inventory:client:ItemBox', id,
+                                            TriggerClientEvent('qb-inventory:client:ItemBox', id,
                                                 QBCore.Shared.Items[Config.KeyItem], 'remove', 1)
                                         end
                                     end
@@ -194,7 +194,7 @@ local function RegisterVehicleKeys(id)
                         else
                             if item.info.citizenid ~= QBCore.Functions.GetPlayer(id).PlayerData.citizenid then
                                 QBCore.Functions.GetPlayer(id).Functions.RemoveItem(Config.KeyItem, 1, item.slot)
-                                TriggerClientEvent('inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem],
+                                TriggerClientEvent('qb-inventory:client:ItemBox', id, QBCore.Shared.Items[Config.KeyItem],
                                     'remove', 1)
                             end
                         end
